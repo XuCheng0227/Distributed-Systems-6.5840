@@ -24,6 +24,23 @@ type ExampleReply struct {
 
 // Add your RPC definitions here.
 
+const (
+	_map = 0
+	_reduce = 1
+	_wait = 2
+	_end = 3
+)
+
+// Used to do the rpc b/w coor
+type TaskState struct {
+	State int
+	fileName string
+	nMap int
+	nReduce int
+	indexMapWorker int
+	indexReduceWorker int
+}
+
 
 // Cook up a unique-ish UNIX-domain socket name
 // in /var/tmp, for the coordinator.
